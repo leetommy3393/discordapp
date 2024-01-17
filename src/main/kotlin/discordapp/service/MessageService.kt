@@ -9,15 +9,10 @@ import java.time.format.DateTimeFormatter
 
 
 @Service
-class MessageService {
-
-    //TODO: Autowiring not working?
-    @Autowired
-    lateinit var properties: Properties
+class MessageService @Autowired constructor(val properties: Properties) {
 
     // Creates Discord Bot with set properties
-
-    val discord = Discord(properties.url,properties.username,properties.avatarUrl)
+    private val discord = Discord(properties.url,properties.username,properties.avatarUrl)
 
     // Time of message
     private final val formatter = DateTimeFormatter.ofPattern("MMM d, yyyy: h:mm a")
