@@ -1,21 +1,29 @@
-package discordapp
+package discordapp.service
 
 import com.github.rillis.discord.Discord
+import discordapp.config.Properties
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+
 @Service
 class MessageService {
 
-    private final val url = "https://discordapp.com/api/webhooks/1192199123852591134/29VnyyPfX7LjtAizrkGv32OTGwB8n6r0ny6oISXtBD7R_Rdc5td6qa1dC4V8iOdnsQ4_"
-    private final val username = "tommy-app"
-    private final val avatarUrl = "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
-    private val discord = Discord(url, username, avatarUrl)
+    //TODO: Autowiring not working?
+    @Autowired
+    lateinit var properties: Properties
 
+    // Creates Discord Bot with set properties
+
+    val discord = Discord(properties.url,properties.username,properties.avatarUrl)
+
+    // Time of message
     private final val formatter = DateTimeFormatter.ofPattern("MMM d, yyyy: h:mm a")
     private val current = LocalDateTime.now().format(formatter)
 
+    // Sends a message with user's local time
     fun sendMessage(message: String){
 
         val discordMessage = "$current: $message"
