@@ -2,6 +2,8 @@
 #### This is a personal project of mines to build API endpoints that allows users to send a message through a discord bot using Kotlin and Spring Boot.
 This was my first exposure to Kotlin, Spring Boot, Application Development, and much more. Throughout the process of creating this application, I have learned the importance of file structure, documentation, version control, database management, and other best practices. 
 
+## Status: Unfinished
+
 ### Functionality <a name="functionality"></a>
 This app has a controller class that is an endpoint that you hit by passing in a string. The controller class talks to a service class that executes and sends a discord message through the webhook.
 
