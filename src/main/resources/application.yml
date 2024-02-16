@@ -1,4 +1,18 @@
 ---
+#spring:
+#    datasource:
+#        url: aaa
+#        username: aaa
+#        password: aaa
+#        driver-class-name: aaa
+#
+#jpa:
+#    hibernate:
+#        ddl-auto: update
+#    properties:
+#        hibernate:
+#            dialect:
+
 app:
     url: https://discordapp.com/api/webhooks/1192199123852591134/29VnyyPfX7LjtAizrkGv32OTGwB8n6r0ny6oISXtBD7R_Rdc5td6qa1dC4V8iOdnsQ4_
     username: tommy-app
